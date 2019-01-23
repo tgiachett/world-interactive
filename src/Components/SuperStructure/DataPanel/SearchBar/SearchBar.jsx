@@ -41,7 +41,7 @@ class SearchBar extends React.Component {
         this.setState({
             inputValue: e.target.value
         });
-        console.log(this.state.inputValue);
+        
         
         //fetch
                         
