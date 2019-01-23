@@ -11,7 +11,8 @@ class SearchBar extends React.Component {
          this.state = {
              inputValue: "https://restcountries.eu/rest/v2/name/Italy",
              dataRes: [],
-             error: ''
+             error: '',
+             isRecieved: false
          };
      }
 
@@ -51,7 +52,7 @@ class SearchBar extends React.Component {
         this.props.runner('');
         e.preventDefault();
         
-        fetch(`${this.state.inputValue}?fields=alpha2Code`)
+        fetch(`${this.state.inputValue}?fields=name;alpha2Code`)
             .then(res => res.json())
             .then(
                 (result) => {
@@ -72,10 +73,21 @@ class SearchBar extends React.Component {
                 }
             );
         
-    } 
-    
-    render() {
+    }
 
+ 
+    componentDidUpdate(prevProps, prevState) {
+        if(this.state.dataRes !== prevState.dataRes) {
+            if(this.state.dataRes.length > 0) {
+            this.setState({
+                isRecieved: true
+            });
+            }
+        }
+    }
+
+    render() {
+        
 return (
             <div>
               <form onSubmit={this.handleSubmit}>
@@ -86,7 +98,7 @@ return (
                 <input type="submit" value="Submit"/>
               </form>
               <div id="results">
-                {this.state.dataRes.name}
+                {(this.state.isRecieved) ? (this.state.dataRes.map((a ,k) => <div key={k}> {a.name}</div>)) : null }
               </div>
             </div>
         );

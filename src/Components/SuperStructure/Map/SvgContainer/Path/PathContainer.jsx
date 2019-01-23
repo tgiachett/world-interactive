@@ -16,24 +16,32 @@ class PathContainer extends React.Component {
 
     //methods
     componentDidUpdate(prevProps, prevState) {
- 
-        if(this.props.activecountrydata !== '') {
-         if (this.props.activecountrydata !== prevProps.activecountrydata) {
+      
+
+        if (this.props.activecountrydata !== prevProps.activecountrydata) {
              
-             let countryApiArray = this.props.activecountrydata.map(a => a.alpha2Code);
+            this.setState({
+                element: {
+                    isHighlighted: false,
+                    isColor: this.props.pfill
+                }
+            });
+            if(this.props.activecountrydata !== '') {       
+                 let countryApiArray = this.props.activecountrydata.map(a => a.alpha2Code);
            
-             if ((countryApiArray.indexOf(this.props.dataname) !== -1)) {
+                 if ((countryApiArray.indexOf(this.props.dataname) !== -1)) {
                  this.setState({
                      element: {
                          isHighlighted: true,
                          isColor: '#ffa500'
                      }
                    });
-             }
-         }
-} 
-           
+                 }
+            }
         }
+    } 
+           
+        
     
 
     
