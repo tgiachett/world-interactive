@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/world-interactive/static/js/runtime~main.65f692df.js"
   },
   {
-    "revision": "4de019b4c01b2dbc711e2bdeb36d2ecf",
+    "revision": "44562ef650b0c0c597fb9f9aaf76642b",
     "url": "/world-interactive/index.html"
   }
 ];
