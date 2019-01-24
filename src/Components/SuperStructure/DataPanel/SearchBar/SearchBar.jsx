@@ -1,41 +1,19 @@
 import React from 'react';
 
-// import SuperStructureView from './SuperStructureView';
-// import MapContainer from './Map/MapContainer';
-// import SearchBar from './DataPanel/SearchBar';
 
 class SearchBar extends React.Component {
 
      constructor(props) {
         super(props);
          this.state = {
-             inputValue: "https://restcountries.eu/rest/v2/name/Italy",
+             inputValue: "https://restcountries.eu/rest/v2/currency/EUR",
              dataRes: [],
              error: '',
              isRecieved: false
          };
      }
 
-    //methods
-// fetch(`${this.state.inputValue}?fields=name`)
-//             .then(res => res.json())
-//             .then(
-//                 (result) => {
-//                     const data = JSON.stringify(result);
-//                     this.props.runner(data);
-//                     this.setState({
-//                         dataRes: data
-//                     });
-//                     console.log(data);
-//                 },
-//                 (error) => {
-//                     const err = JSON.stringify(error);
-//                     this.setState({
-//                         err
-//                     });
-//                     console.log(this.state.err);
-//                 }
-//             );
+
 
     handleChange = (e) => {
         e.preventDefault();
@@ -58,11 +36,12 @@ class SearchBar extends React.Component {
                 (result) => {
                     
                     const data = result;
+                    if(result.status) { this.setState({ dataRes: [{name: `Error ${result.status} Invalid API query`}]});  return; } else { 
                     this.props.runner(data);
                     this.setState({
                         dataRes: data
                     });
-                    
+                    }
                 },
                 (error) => {
                     const err = JSON.stringify(error);
