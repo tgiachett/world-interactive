@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "44fa763852b6362aec38",
+    "revision": "d7b5754ac552240f342f",
     "url": "/world-interactive/static/css/main.f7bfe6d3.chunk.css"
   },
   {
-    "revision": "44fa763852b6362aec38",
-    "url": "/world-interactive/static/js/main.44fa7638.chunk.js"
+    "revision": "d7b5754ac552240f342f",
+    "url": "/world-interactive/static/js/main.d7b5754a.chunk.js"
   },
   {
     "revision": "3a24309ae6165f4370bf",
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/world-interactive/static/js/runtime~main.65f692df.js"
   },
   {
-    "revision": "d0f279d13a127ae77269166ffed58aa3",
+    "revision": "0fc5bfa8150550d1fe2699712eec3977",
     "url": "/world-interactive/index.html"
   }
 ];
