@@ -13,13 +13,13 @@ class SuperStructureView extends React.Component {
 
     render() {
 
-return (
-    <div style={{display: 'flex', flexDirection: 'row'}}>
-              <DataPanelContainer runner={this.props.runner} style={{width: '20vh'}}/>
-      <MapContainer activecountrydata={this.props.activecountrydata} style={{width: '80vh'}} />
+        return (
+            <div>
+              <DataPanelContainer runner={this.props.runner}/>
+              <MapContainer activecountrydata={this.props.activecountrydata} />
             </div>
         );
-}
+    }
 }
 
     

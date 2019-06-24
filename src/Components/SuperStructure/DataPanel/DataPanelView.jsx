@@ -13,8 +13,8 @@ class DataPanelView extends React.Component {
     render() {
 
 return (
-            <div>
-              <SearchBar runner={this.props.runner}/>
+            <div style={{height: '20vh', display: 'inline-block' }}>
+              <SearchBar style={{display: 'inline-block' }} runner={this.props.runner}/>
             </div>
         );
 }

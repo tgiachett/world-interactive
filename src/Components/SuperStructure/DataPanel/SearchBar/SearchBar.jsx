@@ -68,7 +68,7 @@ class SearchBar extends React.Component {
     render() {
         
 return (
-            <div>
+    <div style={{fontSize: '2vh', display: 'inline-block'}}>
               <form onSubmit={this.handleSubmit}>
                 <label>
                   Query: 
@@ -77,7 +77,7 @@ return (
                 <input type="submit" value="Submit"/>
               </form>
               <div id="results">
-                {(this.state.isRecieved) ? (this.state.dataRes.map((a ,k) => <div key={k}> {a.name}</div>)) : null }
+                {(this.state.isRecieved) ? (this.state.dataRes.map((a ,k) => <div key={k} style={{fontSize: '2vh', display: 'inline-block'}}>{a.name}, &nbsp;</div>)) : null }
               </div>
             </div>
         );
